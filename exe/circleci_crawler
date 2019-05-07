@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'circleci_crawler'
+require 'optparse'
+
+params = ARGV.getopts('',
+                      "project-path:",
+                      "path:",
+                      "api-token:",
+                      "version")
+
+if params['version']
+  puts CircleciCrawler::VERSION
+  return
+end
+
+crawler = CircleciCrawler::Crawler.new(api_token: params['api-token'], project_path: params['project-path'], path: params['path'])
+puts crawler.crawl
