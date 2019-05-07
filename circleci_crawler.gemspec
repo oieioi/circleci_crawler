@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["oieioi"]
   spec.email         = ["atsuinatsu.samuifuyu@gmail.com"]
 
-  spec.summary       = "t"
-  spec.description   = "t"
+  spec.summary       = "CiclrCI's artifact file crawler"
+  spec.description   = "This gem crawls the latest CircleCI artifact file you specified. For Example, you can get the result JSON of simplecov.gem etc."
   spec.homepage      = "https://github.com/oieioi/circleci_crawler"
   spec.license       = "MIT"
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
