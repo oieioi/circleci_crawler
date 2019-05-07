@@ -13,7 +13,7 @@ $ gem install circleci_crawler
 Crawl simplecov.gem result json:
 
 ```sh
-$ circleci_crawler --project-path="github/your_account_name/your_repositry_name" \
+$ circleci_crawler --project-path="github/your_account_name/your_repository_name" \
                    --api-token=your_circleci_api_token \
                    --path="artifact-file/.last_run.json" | jq
 # {
@@ -21,6 +21,16 @@ $ circleci_crawler --project-path="github/your_account_name/your_repositry_name"
 #      "covered_percent": 83.37
 #   }
 # }
+```
+
+Or 
+
+```ruby
+crawler = CircleciCrawler::Crawler.new(
+            project_path: 'github/your_account_name/your_repository_name',
+            api_token: 'your_circleci_api_token',
+            path: 'artifact-file/.last_run.json')
+puts crawler.crawl
 ```
 
 ## License
